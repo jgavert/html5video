@@ -1,0 +1,9 @@
+video(id=vName class="video-js vjs-default-skin vjs-big-play-centered"
+  controls preload="auto" width="1280" height="720"
+  data-setup='{"controls": true, "autoplay": false, "preload": "metadata"}')
+  source(src= video type='video/mp4')
+h1= title
+- each stuff in stuffs
+  p
+    - var encodedUrl = "/video?file=" + encodeURIComponent(stuff);
+      a(href=encodedUrl)= stuff
