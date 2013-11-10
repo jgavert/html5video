@@ -5,5 +5,5 @@ video(id=vName class="video-js vjs-default-skin vjs-big-play-centered"
 h1= title
 - each stuff in stuffs
   p
-    - var encodedUrl = "/video?file=" + encodeURIComponent(stuff);
-      a(href=encodedUrl)= stuff
+    - var encodedUrl = "/video?file=" + encodeURIComponent(stuff.file);
+      a(href=encodedUrl)= stuff.name

@@ -1,11 +1,13 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
+    "name": "Html5VideoServer"
+  , "version": "0.0.2"
   , "private": true
   , "dependencies": {
       "express": "2.5.8"
     , "stylus": ">= 0.0.1"
     , "jade": ">= 0.0.1"
     , "underscore": ">= 1.5.2"
+    , "readdirp": ">= 0.3.1"
+    , "commander": ">= 2.0.0"
   }
 }
