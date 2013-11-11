@@ -13,7 +13,7 @@ var program = require('commander');
 
 program
   .version('0.0.2')
-  .option('-a, --path [value]', 'Media Path')
+  .option('-a, --path <path>', 'Media Path')
   .option('-p, --port <port>', 'Port number, default: 8080', Number, 8080)
   .parse(process.argv);
 
