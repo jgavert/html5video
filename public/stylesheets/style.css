@@ -5,3 +5,10 @@ body {
 a {
   color: #00b7ff;
 }
+.vjs-default-skin .vjs-play-progress,
+.vjs-default-skin .vjs-volume-level {
+  background-color: #cf5454;
+}
+.vjs-default-skin .vjs-control-bar {
+  font-size: 105%;
+}

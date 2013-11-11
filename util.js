@@ -3,6 +3,8 @@ var path = require('path')
   , fs = require('fs')
   , underscore = require('underscore');
 
+
+var thisf = path.dirname(fs.realpathSync(__filename));
 function naturalSort (asd, bsd) {
   var a = asd.name;
   var b = bsd.name;
@@ -68,16 +70,20 @@ var walk = function(dir) {
     var list = fs.readdirSync(dir)
     list.forEach(function(file) {
         file = dir + '/' + file
-        var stat = fs.statSync(file)
-        if (stat && stat.isDirectory()) results = results.concat(walk(file))
-        else results.push(file)
+        if (fs.existsSync(file)){
+          if (!(file == thisf)) {
+            var stat = fs.statSync(file)
+            if (stat && stat.isDirectory()) results = results.concat(walk(file))
+            else results.push(file)
+          }
+        }
     })
     return results
 }
 
 function getFiles(mediaPath) {
   var list = walk(mediaPath);
-    var re = new RegExp(".+mp4");
+    var re = /^.+mp4$/;
     var result = underscore.filter(list, function(filename){return filename.match(re);});
     var finl = lol(result, mediaPath);
     finl.sort(naturalSort);
