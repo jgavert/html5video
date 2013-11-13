@@ -1,9 +1,10 @@
-video(id='video' class="video-js vjs-default-skin vjs-big-play-centered"
+video(id='gen' class="video-js vjs-default-skin vjs-big-play-centered"
   controls width="1280" height="720"
   data-setup='{"controls": true, "autoplay": false, "preload": "metadata"}')
   source(src= video type='video/mp4')
-h1= title
-- each stuff in stuffs
-  p
-    - var encodedUrl = "/video?file=" + encodeURIComponent(stuff.file);
+h1(id='gen')= vName
+#gen
+  - each stuff in stuffs
+    - var encodedUrl = "/juho/heh?file=" + stuff.i;
+      br
       a(href=encodedUrl)= stuff.name

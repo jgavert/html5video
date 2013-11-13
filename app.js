@@ -51,11 +51,18 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
-app.get('/video', function(req, res) {
+app.get('/juho/heh', function(req, res) {
   var vf = req.param('file');
-  //console.log(vf);
-  var result = files.getFiles(mediaPath);
-  res.render('video', { title: 'Videos', video: '/file/'+vf, vName: vf, stuffs: result})
+  var result = files.getFiles(mediaPath, true);
+  var obj = new Object();
+  if (vf) {
+    var obj = files.getObj(vf);
+    if (!obj) {
+      obj.file = 'undefined';
+      obj.name = 'Could not find.';
+    }
+  }
+  res.render('video', { title: 'Videos', video: '/file/'+obj.file, vName: obj.name, stuffs: result})
 });
 
 app.listen(program.port);

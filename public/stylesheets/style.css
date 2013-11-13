@@ -1,9 +1,22 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  background: #181818;
+}
+#gen {
+  width: 1280px;
+  margin: 0px auto;
+  text-align: left;
 }
 a {
-  color: #00b7ff;
+  color: #888;
+  text-decoration: none;
+}
+h1 {
+  color: #888;
 }
 .vjs-default-skin .vjs-play-progress,
 .vjs-default-skin .vjs-volume-level {

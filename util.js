@@ -56,8 +56,10 @@ function lol(a, mediaPath) {
     var rs = re2.exec(a[i]);
     if (!rs) {
       obj.name = a[i];
+      obj.episode = '-1';
     }else {
       obj.name = rs[1] + " - " + rs[2];
+      obj.episode = rs[2];
     }
     obj.i = i;
     objArr.push(obj);
@@ -81,18 +83,38 @@ var walk = function(dir) {
     return results
 }
 
+
+var result = getFiles;
+
+function findByName(str) {
+  if (!result)
+    return null;
+  var reslt = underscore.filter(result, function(obj) {return obj.i === Number(str);});
+  var first = reslt[0];
+  return first;
+}
+function getFilesAdv(mediaPath, update){
+  if (update){
+    result = getFiles(mediaPath);
+  }
+  return result;
+}
+
 function getFiles(mediaPath) {
   var list = walk(mediaPath);
-    var re = /^.+mp4$/;
-    var result = underscore.filter(list, function(filename){return filename.match(re);});
-    var finl = lol(result, mediaPath);
-    finl.sort(naturalSort);
+  var re = /^.+mp4$/;
+  var result = underscore.filter(list, function(filename){return filename.match(re);});
+  var finl = lol(result, mediaPath);
+  finl.sort(naturalSort);
   return finl;
 }
 //console.log(vf);
 module.exports = {
-  getFiles: function (mediaPath) {
-    return getFiles(mediaPath);
+  getFiles: function (mediaPath, update) {
+    return getFilesAdv(mediaPath, update);
+  }
+  , getObj: function (mediaPath, update) {
+    return findByName(mediaPath, update);
   }
 }
 
