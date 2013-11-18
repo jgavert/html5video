@@ -2,18 +2,19 @@ Simple http videofile server using html5 video capabilities.
 
 PreReq:
 -------
-node version: v0.10.x or higher
-npm version: 1.1.59 or higher
-  
+* node version: v0.10.x or higher
+* npm version: 1.1.59 or higher
 
 Install:
 --------
-cd <projectFolder>
+
+cd \<projectFolder\>
+
 npm install
 
 Run:
 ----
-node app.js --path <folder> --port <port>
+node app.js --path \<folder\> --port \<port\>
 
 Result:
 -------
