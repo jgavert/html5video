@@ -5,6 +5,6 @@ video(id='gen' class="video-js vjs-default-skin vjs-big-play-centered"
 h1(id='gen')= vName
 #gen
   - each stuff in stuffs
-    - var encodedUrl = "/juho/heh?file=" + stuff.i;
+    - var encodedUrl = "/video?file=" + stuff.i;
       br
       a(href=encodedUrl)= stuff.name

@@ -51,7 +51,7 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
-app.get('/juho/heh', function(req, res) {
+app.get('/video', function(req, res) {
   var vf = req.param('file');
   var result = files.getFiles(mediaPath, true);
   var obj = new Object();
