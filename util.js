@@ -5,6 +5,9 @@ var path = require('path')
 
 
 var thisf = path.dirname(fs.realpathSync(__filename));
+
+// I don't know why I haven't commented where this is from. Yes, this is borrowed from some answer.
+// When I did this I hoped there would be a library to achieve this but there weren't.
 function naturalSort (asd, bsd) {
   var a = asd.name;
   var b = bsd.name;
@@ -46,6 +49,7 @@ function naturalSort (asd, bsd) {
   return 0;
 }
 
+// I'm sorry about the function name... I don't even know.
 function lol(a, mediaPath) {
   var length = a.length;
   var objArr = [];
@@ -67,6 +71,7 @@ function lol(a, mediaPath) {
   return objArr;
 }
 
+// I would assume that this is also borrowed...
 var walk = function(dir) {
     var results = []
     var list = fs.readdirSync(dir)
